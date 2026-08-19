@@ -1,0 +1,52 @@
+# ─── Dependencies ────────────────────────────────────────────────
+node_modules/
+.pnp
+.pnp.js
+.yarn/
+.pnp.*
+
+# ─── Build output ────────────────────────────────────────────────
+dist/
+dist-ssr/
+build/
+*.local
+
+# ─── Environment variables ───────────────────────────────────────
+# Committed:  .env, .env.development, .env.production, .env.example
+# Ignored:    anything ending in .local (personal overrides / secrets)
+.env.local
+.env.*.local
+
+# ─── Logs ────────────────────────────────────────────────────────
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+logs/
+*.log
+
+# ─── Editor / OS ─────────────────────────────────────────────────
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
+
+# ─── TypeScript ──────────────────────────────────────────────────
+*.tsbuildinfo
+
+# ─── Coverage / testing ──────────────────────────────────────────
+coverage/
+.nyc_output/
+
+# ─── Vite ────────────────────────────────────────────────────────
+.vite/
+
+.env

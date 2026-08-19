@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/ProductManagement.Api/">
+    <Project Path="ProductManagement.Api/ProductManagement.API.csproj" />
+  </Folder>
+  <Project Path="ProductManagement.Application/ProductManagement.Application.csproj" />
+  <Project Path="ProductManagement.Domain/ProductManagement.Domain.csproj" />
+  <Project Path="ProductManagement.Infrastructure/ProductManagement.Infrastructure.csproj" />
+</Solution>
