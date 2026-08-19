@@ -104,11 +104,7 @@ const ProductForm: React.FC<Props> = ({
   };
 
   return (
-    <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
-      <h2 className="mb-4 text-lg font-semibold text-slate-800">
-        {editingProduct ? 'Edit Product' : 'Add New Product'}
-      </h2>
-
+    <div>
       {errors.api && (
         <div className="mb-4 rounded-md border border-red-200 bg-red-50 px-4 py-2 text-sm text-red-700">
           {errors.api}
@@ -138,10 +134,10 @@ const ProductForm: React.FC<Props> = ({
             maxLength={100}
             disabled={isSubmitting}
             placeholder="e.g. Running Shoes"
-            className={`w-full rounded-md border px-3 py-2 text-sm shadow-sm outline-none transition focus:ring-2 focus:ring-blue-200 disabled:opacity-60 ${
+            className={`mt-1 block w-full rounded-lg border px-4 py-2.5 text-sm shadow-sm outline-none transition duration-200 focus:ring-2 disabled:bg-slate-50 disabled:text-slate-500 ${
               errors.name
-                ? 'border-red-400 focus:border-red-400'
-                : 'border-slate-300 focus:border-blue-400'
+                ? 'border-red-300 focus:border-red-400 focus:ring-red-100'
+                : 'border-slate-200 focus:border-blue-500 focus:ring-blue-100'
             }`}
           />
           {errors.name && (
@@ -164,7 +160,7 @@ const ProductForm: React.FC<Props> = ({
             rows={3}
             disabled={isSubmitting}
             placeholder="Optional description..."
-            className="w-full rounded-md border border-slate-300 px-3 py-2 text-sm shadow-sm outline-none transition focus:border-blue-400 focus:ring-2 focus:ring-blue-200 disabled:opacity-60"
+            className="mt-1 block w-full rounded-lg border border-slate-200 px-4 py-2.5 text-sm shadow-sm outline-none transition duration-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 disabled:bg-slate-50 disabled:text-slate-500"
           />
         </div>
 
@@ -184,11 +180,11 @@ const ProductForm: React.FC<Props> = ({
             value={form.price}
             onChange={handleChange}
             disabled={isSubmitting}
-            placeholder="e.g. 29.99"
-            className={`w-full rounded-md border px-3 py-2 text-sm shadow-sm outline-none transition focus:ring-2 focus:ring-blue-200 disabled:opacity-60 ${
+            placeholder="0.00"
+            className={`mt-1 block w-full rounded-lg border px-4 py-2.5 text-sm shadow-sm outline-none transition duration-200 focus:ring-2 disabled:bg-slate-50 disabled:text-slate-500 ${
               errors.price
-                ? 'border-red-400 focus:border-red-400'
-                : 'border-slate-300 focus:border-blue-400'
+                ? 'border-red-300 focus:border-red-400 focus:ring-red-100'
+                : 'border-slate-200 focus:border-blue-500 focus:ring-blue-100'
             }`}
           />
           {errors.price && (
@@ -196,16 +192,16 @@ const ProductForm: React.FC<Props> = ({
           )}
         </div>
 
-        <div className="flex gap-2 pt-2">
+        <div className="flex gap-3 pt-4">
           <button
             type="submit"
             disabled={isSubmitting}
-            className="rounded-md bg-blue-600 px-5 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
+            className="flex-1 rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
           >
             {isSubmitting
               ? 'Saving...'
               : editingProduct
-              ? 'Update Product'
+              ? 'Save Changes'
               : 'Add Product'}
           </button>
           {editingProduct && onCancelEdit && (
@@ -213,7 +209,7 @@ const ProductForm: React.FC<Props> = ({
               type="button"
               onClick={onCancelEdit}
               disabled={isSubmitting}
-              className="rounded-md border border-slate-300 bg-slate-50 px-5 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-60"
+              className="flex-1 rounded-lg border border-slate-200 bg-white px-5 py-2.5 text-sm font-medium text-slate-700 shadow-sm transition hover:bg-slate-50 hover:text-slate-900 disabled:cursor-not-allowed disabled:opacity-60"
             >
               Cancel
             </button>
